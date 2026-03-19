@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SALVA — Sustainable Advancement through Local Ventures & Assets</title>
+
+  <!-- Meta tags for SEO and social sharing -->
+  <meta name="description" content="SALVA is an advisory and alternative asset management platform deploying capital across Regenerative Tourism, Mixed Use Residential, and Resilient Infrastructure." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="SALVA — Sustainable Advancement through Local Ventures & Assets" />
+  <meta property="og:description" content="An advisory and alternative asset management platform deploying capital where institutional-grade returns and regenerative impact converge." />
+  <meta property="og:url" content="https://www.salva.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SALVA" />
+  <meta name="twitter:description" content="Advisory & Alternative Asset Management for Regenerative Tourism, Mixed Use Residential & Resilient Infrastructure." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-21MW152SSG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-21MW152SSG');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown:   #845623;
+      --text:    #1A1A18;
+      --mid:     #6A6A65;
+      --lt:      #AEAAA4;
+      --rule:    #E2DDD6;
+      --cream:   #F7F4EF;
+      --white:   #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 99;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 56px;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-right { display: flex; align-items: center; gap: 40px; }
+    .nav-link {
+      font-size: 11px; font-weight: 400; letter-spacing: 0.14em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--mid); transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--brown); }
+    .nav-cta {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--white); background: var(--brown);
+      padding: 9px 22px; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.82; }
+
+    /* PAGES */
+    .page {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding: 100px 56px 80px;
+    }
+    .page-cream { background: var(--cream); }
+
+    /* PAGE 1 */
+    .p1-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+    .eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--brown);
+      margin-bottom: 40px; display: block;
+    }
+    .p1-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5.5vw, 80px);
+      font-weight: 300; line-height: 1.05;
+      color: var(--text); letter-spacing: -0.01em;
+    }
+    .p1-title em { font-style: italic; }
+    .p1-rule { width: 40px; height: 1px; background: var(--brown); margin: 36px 0; }
+    .p1-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 300; font-style: italic;
+      color: var(--mid); line-height: 1.5; max-width: 400px;
+    }
+    .p1-right { padding-bottom: 4px; }
+    .p1-desc {
+      font-size: 15px; font-weight: 300;
+      color: var(--mid); line-height: 1.95;
+      margin-bottom: 52px;
+    }
+    .p1-stats {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid var(--rule);
+      padding-top: 36px; gap: 0;
+    }
+    .p1-stat {
+      padding-right: 28px;
+      border-right: 1px solid var(--rule);
+      margin-right: 28px;
+    }
+    .p1-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 300; color: var(--text); line-height: 1;
+    }
+    .stat-l {
+      font-size: 10px; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--lt);
+      margin-top: 7px; line-height: 1.5;
+    }
+
+    /* PAGE 2 */
+    .p2-header {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: end; margin-bottom: 72px;
+    }
+    .p2-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4vw, 60px);
+      font-weight: 300; line-height: 1.1; color: var(--text);
+    }
+    .p2-title em { font-style: italic; }
+    .p2-intro { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.9; }
+
+    /* Verticals */
+    .p2-verticals {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      border: 1px solid var(--rule);
+    }
+    .vert { padding: 44px 40px 48px; border-right: 1px solid var(--rule); }
+    .vert:last-child { border-right: none; }
+    .vert-num {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.16em;
+      color: var(--brown); margin-bottom: 20px; display: block;
+    }
+    .vert-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 400; color: var(--text);
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .vert-body { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.85; }
+
+    /* Regeneration Fund */
+    .p2-fund {
+      margin-top: 60px; padding-top: 52px;
+      border-top: 1px solid var(--rule);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .p2-fund-eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--brown);
+      margin-bottom: 20px; display: block;
+    }
+    .p2-fund-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 2.5vw, 34px);
+      font-weight: 300; color: var(--text);
+      margin-bottom: 18px; line-height: 1.2;
+    }
+    .p2-fund-title em { font-style: italic; }
+    .p2-fund-body { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.9; margin-bottom: 28px; }
+    .p2-fund-link {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--brown);
+      text-decoration: none; border-bottom: 1px solid var(--brown);
+      padding-bottom: 2px; transition: opacity 0.2s; display: inline-block;
+    }
+    .p2-fund-link:hover { opacity: 0.7; }
+    .p2-pillars {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+    }
+    .pillar { background: var(--white); padding: 22px 24px; }
+    .pillar-name { font-size: 12px; font-weight: 500; color: var(--text); letter-spacing: 0.02em; line-height: 1.3; }
+    .pillar-body { font-size: 11px; font-weight: 300; color: var(--mid); line-height: 1.7; margin-top: 5px; }
+
+    /* How we do it */
+    .p2-how-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--lt); margin: 56px 0 24px;
+    }
+    .p2-steps { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid var(--rule); }
+    .step { padding: 28px 24px 32px; border-right: 1px solid var(--rule); }
+    .step:last-child { border-right: none; }
+    .step-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 300; color: var(--rule); line-height: 1; margin-bottom: 14px;
+    }
+    .step-title { font-size: 11px; font-weight: 500; color: var(--text); letter-spacing: 0.02em; line-height: 1.45; }
+    .step-body { font-size: 11px; font-weight: 300; color: var(--mid); line-height: 1.75; margin-top: 8px; }
+
+    /* PAGE 3 */
+    .p3-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+    .p3-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 4.5vw, 68px);
+      font-weight: 300; line-height: 1.05; color: var(--text);
+    }
+    .p3-title em { font-style: italic; }
+    .p3-body { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.9; margin-top: 28px; max-width: 380px; }
+    .p3-contact-items { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--rule); }
+    .p3-contact-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 14px 0; border-bottom: 1px solid var(--rule);
+    }
+    .p3-contact-key { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lt); }
+    .p3-contact-val { font-size: 13px; font-weight: 300; color: var(--text); }
+    .p3-contact-val a { color: var(--text); text-decoration: none; }
+    .p3-contact-val a:hover { color: var(--brown); }
+    .p3-disc { font-size: 10px; font-weight: 300; color: var(--lt); line-height: 1.75; margin-top: 40px; max-width: 380px; }
+
+    /* Form */
+    .form-title { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lt); margin-bottom: 36px; }
+    .f-row { margin-bottom: 24px; }
+    .f-row label { display: block; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lt); margin-bottom: 8px; }
+    .f-row input, .f-row select {
+      width: 100%; padding: 10px 0; background: transparent;
+      border: none; border-bottom: 1px solid var(--rule);
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: var(--text);
+      outline: none; transition: border-color 0.2s;
+    }
+    .f-row input::placeholder { color: var(--rule); }
+    .f-row input:focus, .f-row select:focus { border-color: var(--brown); }
+    .f-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .btn-sub {
+      margin-top: 36px; padding: 14px 40px;
+      background: var(--brown); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      border: none; cursor: pointer; transition: opacity 0.2s;
+    }
+    .btn-sub:hover { opacity: 0.8; }
+
+    /* FOOTER */
+    footer { background: var(--text); padding: 56px 56px 44px; }
+    .ft-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); gap: 80px;
+    }
+    .ft-tagline { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1.8; max-width: 320px; margin-top: 20px; }
+    .ft-cols { display: flex; gap: 64px; flex-shrink: 0; }
+    .ft-col-title { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 20px; }
+    .ft-links { list-style: none; }
+    .ft-links li { margin-bottom: 10px; }
+    .ft-links a { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .ft-links a:hover { color: rgba(255,255,255,0.75); }
+    .ft-disc { padding-top: 36px; font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.18); line-height: 1.8; max-width: 1100px; }
+    .ft-disc p { margin-bottom: 10px; }
+    .ft-disc p:last-child { margin-bottom: 0; }
+    .ft-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .ft-copy { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.18); }
+    .ft-legal { display: flex; gap: 24px; }
+    .ft-legal a { font-size: 10px; font-weight: 300; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+    .ft-legal a:hover { color: rgba(255,255,255,0.65); }
+
+    /* SCROLL INDICATOR */
+    .scroll-hint {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      color: var(--lt); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px; height: 36px;
+      background: linear-gradient(to bottom, var(--lt), transparent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* MODALS */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(26,26,24,0.72);
+      backdrop-filter: blur(6px);
+      align-items: flex-start; justify-content: center;
+      padding: 48px 24px;
+      overflow-y: auto;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-panel {
+      background: var(--white);
+      width: 100%; max-width: 780px;
+      padding: 56px 60px 60px;
+      position: relative;
+      margin: auto;
+    }
+    .modal-close {
+      position: absolute; top: 24px; right: 28px;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: var(--lt); line-height: 1;
+      transition: color 0.2s; font-family: 'Inter', sans-serif; font-weight: 300;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal-eyebrow {
+      font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--brown); margin-bottom: 16px; display: block;
+    }
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px; font-weight: 300; color: var(--text);
+      line-height: 1.1; margin-bottom: 8px;
+    }
+    .modal-date { font-size: 11px; font-weight: 300; color: var(--lt); margin-bottom: 40px; display: block; }
+    .modal-rule { width: 40px; height: 1px; background: var(--brown); margin-bottom: 40px; }
+    .modal-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 400; color: var(--text);
+      margin-top: 36px; margin-bottom: 10px; line-height: 1.3;
+    }
+    .modal-body h2:first-child { margin-top: 0; }
+    .modal-body p {
+      font-size: 13px; font-weight: 300; color: var(--mid);
+      line-height: 1.9; margin-bottom: 14px;
+    }
+    .modal-body p strong { font-weight: 500; color: var(--text); }
+    .modal-body ul {
+      margin: 10px 0 14px 20px;
+      font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.9;
+    }
+    .modal-body ul li { margin-bottom: 6px; }
+    .modal-contact {
+      margin-top: 32px; padding: 24px 28px;
+      border: 1px solid var(--rule); background: var(--cream);
+    }
+    .modal-contact p { font-size: 12px; color: var(--mid); margin: 0; }
+    .modal-contact a { color: var(--brown); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-right .nav-link { display: none; }
+      .page { padding: 88px 24px 64px; }
+      .p1-inner, .p2-header, .p2-fund, .p3-inner { grid-template-columns: 1fr; gap: 40px; }
+      .p2-verticals { grid-template-columns: 1fr; }
+      .vert { border-right: none; border-bottom: 1px solid var(--rule); }
+      .p2-steps { grid-template-columns: repeat(3,1fr); }
+      .step:nth-child(3) { border-right: none; }
+      .p1-stats { grid-template-columns: repeat(3,1fr); }
+      .p2-pillars { grid-template-columns: 1fr; }
+      .modal-panel { padding: 40px 28px 44px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG LOGO DEFS -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="logo-h" viewBox="250 300 1410 400">
+    <path fill="currentColor" d="M 540.882812 600.082031 L 586.109375 554.847656 C 586.207031 553.644531 586.214844 552.421875 586.289062 551.210938 L 626.628906 510.875 C 626.722656 508.449219 627 506.066406 627 503.613281 C 627 501.394531 626.742188 499.242188 626.667969 497.039062 L 586.328125 537.378906 C 586.261719 536.289062 586.242188 535.183594 586.167969 534.097656 L 541.082031 579.175781 C 540.9375 578.144531 540.910156 577.074219 540.769531 576.039062 L 509.503906 607.3125 L 538.273438 563.699219 C 537.992188 562.703125 537.574219 561.78125 537.269531 560.796875 L 578.6875 498.019531 C 578.363281 497.09375 577.886719 496.238281 577.542969 495.320312 L 614.734375 438.9375 C 613.316406 435.292969 611.773438 431.726562 610.125 428.203125 L 572.960938 484.542969 C 572.539062 483.667969 572.253906 482.722656 571.816406 481.855469 L 530.457031 544.550781 C 530.007812 543.726562 529.667969 542.839844 529.199219 542.027344 L 500.5625 585.417969 L 523.175781 532.742188 C 522.640625 532.03125 521.898438 531.515625 521.347656 530.820312 L 553.984375 454.785156 C 553.414062 454.113281 552.746094 453.535156 552.15625 452.871094 L 581.410156 384.722656 C 579.039062 382.0625 576.703125 379.359375 574.179688 376.851562 L 544.828125 445.214844 C 544.199219 444.59375 543.648438 443.90625 543 443.292969 L 510.378906 519.277344 C 509.710938 518.6875 509.226562 517.929688 508.550781 517.355469 L 477.367188 589.980469 L 494.378906 507.460938 C 493.664062 507.054688 492.824219 506.867188 492.089844 506.476562 L 509.875 420.226562 C 509.128906 419.863281 508.332031 419.597656 507.585938 419.242188 L 523.558594 341.757812 C 520.546875 340.351562 517.515625 338.992188 514.417969 337.753906 L 498.429688 415.304688 C 497.65625 415 496.925781 414.605469 496.140625 414.320312 L 478.367188 500.546875 C 477.578125 500.28125 476.882812 499.8125 476.082031 499.5625 L 458.136719 586.574219 L 458.136719 495.90625 C 457.328125 495.820312 456.507812 495.769531 455.695312 495.660156 L 455.695312 406.039062 C 454.886719 405.996094 454.066406 405.972656 453.257812 405.917969 L 453.257812 325.242188 C 451.648438 325.199219 450.074219 325 448.457031 325 L 448.304688 325 C 446.683594 325 445.109375 325.199219 443.5 325.242188 L 443.5 405.917969 C 442.691406 405.972656 441.871094 405.996094 441.0625 406.039062 L 441.0625 495.660156 C 440.25 495.769531 439.429688 495.820312 438.621094 495.90625 L 438.621094 586.574219 L 420.675781 499.5625 C 419.875 499.8125 419.179688 500.28125 418.390625 500.546875 L 400.617188 414.320312 C 399.835938 414.605469 399.101562 415 398.332031 415.304688 L 382.339844 337.753906 C 379.242188 338.992188 376.214844 340.351562 373.199219 341.757812 L 389.171875 419.242188 C 388.429688 419.597656 387.628906 419.863281 386.886719 420.226562 L 404.667969 506.476562 C 403.933594 506.867188 403.09375 507.054688 402.378906 507.460938 L 419.390625 589.980469 L 388.210938 517.355469 C 387.53125 517.929688 387.046875 518.6875 386.382812 519.277344 L 353.761719 443.292969 C 353.113281 443.90625 352.558594 444.59375 351.929688 445.214844 L 322.578125 376.851562 C 320.054688 379.359375 317.722656 382.0625 315.347656 384.722656 L 344.601562 452.871094 C 344.011719 453.535156 343.34375 454.113281 342.773438 454.785156 L 375.410156 530.820312 C 374.859375 531.515625 374.117188 532.03125 373.582031 532.742188 L 396.195312 585.417969 L 367.558594 542.027344 C 367.09375 542.839844 366.75 543.726562 366.300781 544.550781 L 324.941406 481.855469 C 324.503906 482.722656 324.21875 483.667969 323.800781 484.542969 L 286.632812 428.203125 C 284.984375 431.726562 283.441406 435.292969 282.023438 438.9375 L 319.214844 495.320312 C 318.871094 496.238281 318.398438 497.09375 318.070312 498.019531 L 359.488281 560.796875 C 359.183594 561.78125 358.765625 562.703125 358.488281 563.699219 L 387.253906 607.3125 L 355.988281 576.039062 C 355.847656 577.074219 355.820312 578.144531 355.675781 579.175781 L 310.589844 534.097656 C 310.515625 535.183594 310.5 536.289062 310.429688 537.378906 L 270.09375 497.039062 C 270.015625 499.242188 269.757812 501.394531 269.757812 503.613281 C 269.757812 506.066406 270.035156 508.449219 270.128906 510.875 L 310.46875 551.210938 C 310.542969 552.421875 310.554688 553.644531 310.648438 554.847656 L 355.875 600.082031 C 356.066406 601.347656 356.058594 602.664062 356.269531 603.917969 L 373.847656 621.496094 L 357.6875 610.855469 C 358 612.148438 358.5625 613.324219 358.925781 614.59375 L 317.023438 587.015625 C 317.464844 588.347656 318.046875 589.605469 318.519531 590.925781 L 281.347656 566.453125 C 283.453125 572.050781 285.824219 577.507812 288.464844 582.820312 L 325.726562 607.347656 C 326.46875 608.789062 327.109375 610.289062 327.90625 611.699219 L 347.566406 624.640625 L 317.28125 624.640625 C 323.3125 631.171875 329.746094 637.3125 336.691406 642.890625 C 343.390625 648.578125 361.039062 659.339844 361.039062 659.339844 C 375.421875 667.417969 391.039062 673.488281 407.527344 677.351562 C 414.644531 679.023438 429.3125 681.1875 429.3125 681.1875 C 443.5 681.984375 448.378906 682.234375 448.378906 682.234375 C 450.027344 682.027344 453.257812 681.984375 453.285156 681.984375 C 467.449219 681.1875 489.230469 677.351562 489.230469 677.351562 C 505.71875 673.488281 521.335938 667.417969 535.71875 659.339844 C 535.71875 659.339844 553.367188 648.578125 560.066406 642.890625 C 567.011719 637.3125 573.445312 631.171875 579.476562 624.640625 L 549.191406 624.640625 L 568.851562 611.699219 C 569.652344 610.289062 570.292969 608.789062 571.035156 607.347656 L 608.292969 582.820312 C 610.933594 577.507812 613.308594 572.050781 615.414062 566.453125 L 578.238281 590.925781 C 579.734375 587.015625 579.734375 587.015625 L 537.832031 614.59375 C 538.757812 612.148438 539.070312 610.855469 539.070312 610.855469 L 522.910156 621.496094 L 540.492188 603.917969 C 540.699219 602.664062 540.691406 601.347656 540.882812 600.082031"/>
+    <path fill="currentColor" d="M 718.820312 547.03125 L 745.335938 547.03125 C 747.832031 584.46875 770.917969 606.304688 808.046875 606.304688 C 847.042969 606.304688 869.816406 590.082031 869.816406 562.003906 C 869.816406 527.6875 837.683594 522.695312 803.988281 517.078125 C 765.929688 511.152344 725.058594 504.601562 725.058594 457.179688 C 725.058594 415.375 755.945312 391.976562 807.734375 391.976562 C 857.027344 391.976562 887.914062 421.300781 890.722656 470.59375 L 864.203125 470.59375 C 862.328125 435.339844 841.117188 414.75 806.796875 414.75 C 772.480469 414.75 752.199219 429.722656 752.199219 455.621094 C 752.199219 485.257812 781.527344 489.9375 813.660156 494.929688 C 852.972656 501.167969 897.273438 508.03125 897.273438 560.132812 C 897.273438 603.5 863.890625 629.082031 807.734375 629.082031 C 755.007812 629.082031 721.9375 598.816406 718.820312 547.03125"/>
+    <path fill="currentColor" d="M 1064.183594 544.84375 L 1016.449219 397.589844 L 1015.828125 397.589844 L 967.78125 544.84375 Z M 1071.046875 566.683594 L 960.605469 566.683594 L 941.261719 625.960938 L 913.808594 625.960938 L 993.050781 395.09375 L 1040.472656 395.09375 L 1119.40625 625.960938 L 1090.390625 625.960938 Z"/>
+    <path fill="currentColor" d="M 1282.007812 603.496094 L 1282.007812 625.960938 L 1149.105469 625.960938 L 1149.105469 395.09375 L 1175.621094 395.09375 L 1175.621094 603.496094 Z"/>
+    <path fill="currentColor" d="M 1456.957031 395.09375 L 1384.890625 625.960938 L 1335.597656 625.960938 L 1263.84375 395.09375 L 1292.855469 395.09375 L 1360.554688 623.464844 L 1361.179688 623.464844 L 1429.191406 395.09375 Z"/>
+    <path fill="currentColor" d="M 1591.777344 544.84375 L 1544.042969 397.589844 L 1543.417969 397.589844 L 1495.375 544.84375 Z M 1598.640625 566.683594 L 1488.199219 566.683594 L 1468.855469 625.960938 L 1441.402344 625.960938 L 1520.644531 395.09375 L 1568.066406 395.09375 L 1646.996094 625.960938 L 1617.980469 625.960938 Z"/>
+  </symbol>
+  <symbol id="logo-stacked" viewBox="580 170 760 660">
+    <path fill="currentColor" d="M 1057.445312 462.78125 L 1104.261719 415.945312 C 1104.359375 414.703125 1104.371094 413.433594 1104.449219 412.179688 L 1146.207031 370.421875 C 1146.304688 367.90625 1146.589844 365.4375 1146.589844 362.902344 C 1146.589844 360.605469 1146.324219 358.375 1146.246094 356.09375 L 1104.488281 397.859375 C 1104.417969 396.730469 1104.398438 395.585938 1104.320312 394.460938 L 1057.648438 441.136719 C 1057.5 440.066406 1057.472656 438.960938 1057.324219 437.890625 L 1024.957031 470.269531 L 1054.738281 425.117188 C 1054.449219 424.082031 1054.015625 423.128906 1053.699219 422.113281 L 1096.574219 357.113281 C 1096.238281 356.15625 1095.742188 355.269531 1095.386719 354.320312 L 1133.886719 295.945312 C 1132.417969 292.171875 1130.820312 288.476562 1129.113281 284.832031 L 1090.640625 343.160156 C 1090.207031 342.253906 1089.910156 341.277344 1089.457031 340.378906 L 1046.644531 405.289062 C 1046.179688 404.4375 1045.824219 403.519531 1045.34375 402.675781 L 1015.699219 447.601562 L 1039.105469 393.066406 C 1038.550781 392.332031 1037.785156 391.796875 1037.210938 391.074219 L 1070.996094 312.359375 C 1070.402344 311.660156 1069.714844 311.058594 1069.101562 310.375 L 1099.382812 239.816406 C 1096.925781 237.066406 1094.507812 234.265625 1091.894531 231.667969 L 1061.511719 302.449219 C 1060.863281 301.804688 1060.289062 301.089844 1059.621094 300.460938 L 1025.855469 379.128906 C 1025.164062 378.515625 1024.664062 377.734375 1023.960938 377.136719 L 991.683594 452.328125 L 1009.289062 366.898438 C 1008.550781 366.476562 1007.679688 366.28125 1006.921875 365.875 L 1025.324219 276.582031 C 1024.554688 276.203125 1023.726562 275.929688 1022.953125 275.5625 L 1039.484375 195.339844 C 1036.367188 193.886719 1033.230469 192.480469 1030.023438 191.199219 L 1013.472656 271.488281 C 1012.675781 271.171875 1011.917969 270.761719 1011.105469 270.46875 L 992.714844 359.738281 C 991.894531 359.464844 991.175781 358.980469 990.347656 358.71875 L 971.777344 448.804688 L 971.769531 354.9375 C 970.929688 354.847656 970.082031 354.792969 969.242188 354.679688 L 969.234375 261.898438 C 968.398438 261.851562 967.546875 261.828125 966.710938 261.773438 L 966.703125 178.25 C 965.035156 178.207031 963.40625 178 961.730469 178 L 961.574219 178 C 959.898438 178 958.265625 178.207031 956.597656 178.25 L 956.605469 261.773438 C 955.769531 261.828125 954.921875 261.851562 954.082031 261.898438 L 954.089844 354.679688 C 953.25 354.796875 952.402344 354.851562 951.566406 354.941406 L 951.574219 448.804688 L 932.988281 358.722656 C 932.160156 358.984375 931.4375 359.46875 930.621094 359.746094 L 912.210938 270.476562 C 911.402344 270.773438 910.644531 271.183594 909.84375 271.496094 L 893.28125 191.210938 C 890.078125 192.492188 886.941406 193.898438 883.824219 195.355469 L 900.363281 275.574219 C 899.59375 275.941406 898.765625 276.214844 897.996094 276.59375 L 916.414062 365.882812 C 915.652344 366.289062 914.785156 366.484375 914.046875 366.90625 L 931.660156 452.335938 L 899.375 377.148438 C 898.675781 377.742188 898.171875 378.527344 897.484375 379.136719 L 863.703125 300.476562 C 863.035156 301.109375 862.460938 301.824219 861.808594 302.464844 L 831.417969 231.691406 C 828.804688 234.289062 826.386719 237.085938 823.929688 239.839844 L 854.222656 310.394531 C 853.613281 311.078125 852.921875 311.675781 852.332031 312.375 L 886.125 391.085938 C 885.554688 391.808594 884.785156 392.34375 884.234375 393.082031 L 907.648438 447.613281 L 878 402.691406 C 877.515625 403.535156 877.160156 404.453125 876.695312 405.304688 L 833.871094 340.402344 C 833.417969 341.296875 833.125 342.277344 832.691406 343.183594 L 794.207031 284.859375 C 792.5 288.503906 790.902344 292.203125 789.433594 295.972656 L 827.945312 354.34375 C 827.589844 355.292969 827.097656 356.175781 826.761719 357.132812 L 869.644531 422.125 C 869.328125 423.140625 868.894531 424.097656 868.609375 425.132812 L 898.394531 470.28125 L 866.023438 437.90625 C 865.875 438.976562 865.847656 440.082031 865.699219 441.152344 L 819.019531 394.488281 C 818.941406 395.613281 818.921875 396.753906 818.851562 397.886719 L 777.085938 356.125 C 777.007812 358.40625 776.742188 360.636719 776.742188 362.933594 C 776.742188 365.46875 777.03125 367.9375 777.128906 370.453125 L 818.894531 412.207031 C 818.972656 413.457031 818.984375 414.726562 819.082031 415.96875 L 865.910156 462.796875 C 866.105469 464.105469 866.097656 465.472656 866.316406 466.769531 L 884.515625 484.964844 L 867.785156 473.953125 C 868.109375 475.289062 868.691406 476.507812 869.066406 477.820312 L 825.683594 449.273438 C 826.136719 450.652344 826.742188 451.953125 827.234375 453.320312 L 788.746094 427.988281 C 790.925781 433.785156 793.382812 439.433594 796.117188 444.933594 L 834.695312 470.320312 C 836.953125 474.828125 857.308594 488.222656 857.308594 488.222656 L 825.953125 488.226562 C 832.199219 494.988281 838.859375 501.34375 846.050781 507.117188 C 852.988281 513.003906 871.257812 524.144531 871.257812 524.144531 C 886.148438 532.507812 902.320312 538.792969 919.386719 542.789062 C 941.941406 546.753906 956.601562 547.582031 961.679688 547.839844 C 966.734375 547.582031 981.425781 546.753906 1003.976562 542.78125 C 1021.042969 538.78125 1037.210938 532.496094 1052.101562 524.128906 C 1052.101562 524.128906 1070.371094 512.988281 1077.304688 507.097656 C 1084.5 501.324219 1097.402344 488.203125 1097.402344 488.203125 L 1066.046875 488.207031 L 1086.402344 474.804688 C 1088.660156 470.296875 1127.230469 444.90625 1134.601562 427.960938 L 1096.117188 453.296875 C 1097.664062 449.25 1054.285156 477.800781 1055.570312 473.9375 L 1038.835938 484.953125 L 1057.039062 466.753906 C 1057.253906 465.457031 1057.246094 464.089844 1057.445312 462.78125"/>
+    <path fill="currentColor" d="M 594.28125 750.289062 L 615.195312 750.289062 C 617.164062 779.816406 635.371094 797.039062 664.652344 797.039062 C 695.410156 797.039062 713.371094 784.242188 713.371094 762.097656 C 713.371094 735.03125 688.027344 731.09375 661.453125 726.667969 C 631.4375 721.992188 599.203125 716.824219 599.203125 679.425781 C 599.203125 646.453125 623.5625 628 664.40625 628 C 703.28125 628 727.640625 651.128906 729.855469 690.003906 L 708.941406 690.003906 C 707.464844 662.203125 690.734375 645.960938 663.667969 645.960938 C 636.601562 645.960938 620.609375 657.773438 620.609375 678.195312 C 620.609375 701.570312 643.738281 705.261719 669.082031 709.195312 C 700.082031 714.117188 735.023438 719.53125 735.023438 760.621094 C 735.023438 794.824219 708.695312 815 664.40625 815 C 622.824219 815 596.742188 791.132812 594.28125 750.289062"/>
+    <path fill="currentColor" d="M 866.664062 748.566406 L 829.015625 632.429688 L 828.523438 632.429688 L 790.632812 748.566406 Z M 872.074219 765.789062 L 784.972656 765.789062 L 769.71875 812.539062 L 748.066406 812.539062 L 810.5625 630.460938 L 847.964844 630.460938 L 910.214844 812.539062 L 887.332031 812.539062 Z"/>
+    <path fill="currentColor" d="M 1038.457031 794.824219 L 1038.457031 812.539062 L 933.636719 812.539062 L 933.636719 630.460938 L 954.550781 630.460938 L 954.550781 794.824219 Z"/>
+    <path fill="currentColor" d="M 1176.433594 630.460938 L 1119.597656 812.539062 L 1080.722656 812.539062 L 1024.128906 630.460938 L 1047.011719 630.460938 L 1100.40625 810.570312 L 1100.898438 810.570312 L 1154.535156 630.460938 Z"/>
+    <path fill="currentColor" d="M 1282.761719 748.566406 L 1245.117188 632.429688 L 1244.625 632.429688 L 1206.734375 748.566406 Z M 1288.175781 765.789062 L 1201.074219 765.789062 L 1185.816406 812.539062 L 1164.167969 812.539062 L 1226.664062 630.460938 L 1264.0625 630.460938 L 1326.3125 812.539062 L 1303.429688 812.539062 Z"/>
+  </symbol>
+</svg>
+
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" aria-label="SALVA">
+    <svg width="110" height="31" color="var(--brown)" style="display:block;"><use href="#logo-h"/></svg>
+  </a>
+  <div class="nav-right">
+    <a href="#hero" class="nav-link">Who We Are</a>
+    <a href="#what-we-do" class="nav-link">What We Do</a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+
+<!-- PAGE 1: WHO WE ARE -->
+<section class="page" id="hero" style="position:relative; overflow:hidden;">
+  <div class="p1-inner">
+    <div class="p1-left">
+      <h1 class="p1-title">
+        Sustainable<br>
+        Advancement<br>through Local<br>
+        <em>Ventures &amp; Assets.</em>
+      </h1>
+      <div class="p1-rule"></div>
+      <p class="p1-tagline">
+        Advisory &amp; Asset Management for Regenerative Real Estate, Tourism &amp; Technology.
+      </p>
+    </div>
+    <div class="p1-right">
+      <p class="p1-desc">
+        SALVA is an institutional-grade alternative asset management and advisory platform founded in 2022 with a mission to underwrite, capitalize, and develop regenerative eco-tourism, resilient residential communities, and technology infrastructure across key markets globally.<br><br>
+        We believe that preserving, restoring, and sustainably managing nature is an economic imperative. Active across the Dominican Republic, Costa Rica, Mexico, and the United States, we foster sustainable economic growth and prosperity for investors, communities, and destinations alike.
+      </p>
+      <div class="p1-stats">
+        <div class="p1-stat">
+          <div class="stat-n">2022</div>
+          <div class="stat-l">Founded,<br>Miami FL</div>
+        </div>
+        <div class="p1-stat">
+          <div class="stat-n">4</div>
+          <div class="stat-l">Active<br>Markets</div>
+        </div>
+        <div class="p1-stat">
+          <div class="stat-n">$1B USD</div>
+          <div class="stat-l">AUM Target<br>by FY2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+
+<!-- PAGE 2: WHAT WE DO AND HOW WE DO IT -->
+<section class="page page-cream" id="what-we-do">
+
+  <div class="p2-header">
+    <div>
+      <span class="eyebrow">What We Do</span>
+      <h2 class="p2-title">Three Asset Classes.<br><em>One Regenerative Thesis.</em></h2>
+    </div>
+    <p class="p2-intro">
+      Grounded in institutional-grade advisory expertise, SALVA deploys capital across three interconnected verticals where risk-adjusted returns and measurable regenerative impact converge: Regenerative Tourism, Mixed Use Residential, and Resilient Infrastructure. Our portfolio companies operate across the Dominican Republic, Costa Rica, Mexico, and the United States.
+    </p>
+  </div>
+
+  <div class="p2-verticals">
+    <div class="vert">
+      <span class="vert-num">01</span>
+      <div class="vert-name">Regenerative<br>Tourism</div>
+      <p class="vert-body">Destination hospitality assets developed in partnership with world-class operators and locally-rooted management teams. Every project generates measurable environmental and community benefit alongside competitive financial returns.</p>
+    </div>
+    <div class="vert">
+      <span class="vert-num">02</span>
+      <div class="vert-name">Mixed Use<br>Residential</div>
+      <p class="vert-body">Institutional-grade branded residential communities with positive long-term social, environmental, and economic impacts. Structured to appreciate capital through cap rate compression and generate systematic, cumulative returns.</p>
+    </div>
+    <div class="vert">
+      <span class="vert-num">03</span>
+      <div class="vert-name">Resilient<br>Infrastructure</div>
+      <p class="vert-body">Technology licensing and infrastructure financing that introduces proven sustainable solutions into emerging markets. Clean energy, water systems, and impact technology that enhances destination resilience and reduces long-term operating cost.</p>
+    </div>
+  </div>
+
+  <div class="p2-fund">
+    <div>
+      <span class="p2-fund-eyebrow">The SALVA Regeneration Fund</span>
+      <h3 class="p2-fund-title">Six Pillars.<br><em>Where Principles Become Practice.</em></h3>
+      <p class="p2-fund-body">These six regeneration pillars underpin every design, development, and investment decision across the SALVA portfolio. They interface directly with the independent SALVA Regeneration Fund, a donor-advised fund administered through CAF Americas, which supports qualified third-party non-profit organizations whose work actively restores, regenerates, and enhances these pillars within the communities surrounding our projects.</p>
+      <a class="p2-fund-link" href="https://cafa.iphiview.com/cafa/AccountInformation/tabid/495/dispatch/accountselection_id$461963_hash$e5b4a8fba7d6abbd256a49589ecc076897251d23/Default.aspx" target="_blank" rel="noopener noreferrer">View Our Fund at CAF Americas</a>
+    </div>
+    <div class="p2-pillars">
+      <div class="pillar">
+        <div class="pillar-name">Resource Circularity</div>
+        <div class="pillar-body">Closed-loop resource systems embedded across every phase of design, development, and active operations, minimizing waste and maximizing regenerative potential at each site.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">Accelerating Climate Solutions</div>
+        <div class="pillar-body">Carbon-neutral design, renewable energy, and climate adaptation strategies integrated from pre-acquisition through exit, future-proofing every asset in our portfolio.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">Developing Community Prosperity</div>
+        <div class="pillar-body">Local employment, supplier networks, and social impact programs cultivated through every cycle of investment, development, and operation.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">Natural Systems Stewardship: Land &amp; Sea</div>
+        <div class="pillar-body">Land and marine habitat conservation woven into site selection, development management, active operations, and long-term asset stewardship.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">Enhancing Health &amp; Well-being</div>
+        <div class="pillar-body">Guest and community well-being programs activated at every stage, from pre-opening programming through ongoing outreach, creating lasting human impact.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">Preserving Culture, Supporting the Arts</div>
+        <div class="pillar-body">Heritage preservation, arts programming, and cultural catalysts embedded in the social fabric of each destination from day one through operations.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="p2-how-label">How We Do It: Full-Cycle Partnership</p>
+
+  <div class="p2-steps">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div class="step-title">Acquisition &amp; Due Diligence</div>
+      <div class="step-body">Capital markets assessment, investment analysis, dual financial &amp; sustainability underwriting.</div>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div class="step-title">Pre-Development Planning</div>
+      <div class="step-body">Brand selection, design team, land use support, capitalization &amp; partner strategy.</div>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div class="step-title">Development Management</div>
+      <div class="step-body">Owner representation, CapEx deployment, ESG accreditation (EDGE, LEED, WELL).</div>
+    </div>
+    <div class="step">
+      <div class="step-n">04</div>
+      <div class="step-title">Pre-Opening</div>
+      <div class="step-body">Brand liaison, procurement, sales &amp; marketing launch, community programming.</div>
+    </div>
+    <div class="step">
+      <div class="step-n">05</div>
+      <div class="step-title">Asset Management</div>
+      <div class="step-body">Active operations oversight, capital improvement, sustainability reporting.</div>
+    </div>
+    <div class="step">
+      <div class="step-n">06</div>
+      <div class="step-title">Exit &amp; Decision Support</div>
+      <div class="step-body">Divestment management, broker selection, capital markets strategy, ESG reporting.</div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- PAGE 3: CONTACT -->
+<section class="page" id="contact">
+  <div class="p3-inner">
+    <div>
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="p3-title">
+        Invest in<br><em>Regeneration.</em>
+      </h2>
+      <p class="p3-body">
+        We welcome conversations with institutional investors, family offices, brand operators, and development partners aligned with our mission. SALVA is targeting $1 billion USD in assets under management by end of FY2026, across active markets in the Dominican Republic, Costa Rica, Mexico, and the United States.
+      </p>
+      <div class="p3-contact-items">
+        <div class="p3-contact-row">
+          <span class="p3-contact-key">Headquarters</span>
+          <span class="p3-contact-val">Miami, Florida</span>
+        </div>
+        <div class="p3-contact-row">
+          <span class="p3-contact-key">EMEA Office</span>
+          <span class="p3-contact-val">Lausanne, Switzerland (Opening 2026)</span>
+        </div>
+        <div class="p3-contact-row">
+          <span class="p3-contact-key">Investor Relations</span>
+          <span class="p3-contact-val"><a href="mailto:Investors@Salva.com">Investors@Salva.com</a></span>
+        </div>
+        <div class="p3-contact-row">
+          <span class="p3-contact-key">General Inquiries</span>
+          <span class="p3-contact-val"><a href="mailto:info@salva.com">info@salva.com</a></span>
+        </div>
+        <div class="p3-contact-row">
+          <span class="p3-contact-key">Website</span>
+          <span class="p3-contact-val">www.salva.com</span>
+        </div>
+      </div>
+      <p class="p3-disc">
+        This page is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security. Neutra, LLC dba SALVA is not a registered broker-dealer or registered investment adviser. Prospective investors should conduct their own due diligence and consult qualified legal and financial advisers prior to making any investment decision.
+      </p>
+    </div>
+
+    <form class="p3-form" onsubmit="return false;">
+      <div class="form-title">Investor &amp; Partner Inquiry</div>
+      <div class="f-2col">
+        <div class="f-row">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane" autocomplete="given-name"/>
+        </div>
+        <div class="f-row">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith" autocomplete="family-name"/>
+        </div>
+      </div>
+      <div class="f-row">
+        <label>Email</label>
+        <input type="email" placeholder="jane@institution.com" autocomplete="email"/>
+      </div>
+      <div class="f-row">
+        <label>Organization</label>
+        <input type="text" placeholder="Fund or Firm Name" autocomplete="organization"/>
+      </div>
+      <div class="f-row">
+        <label>I represent a</label>
+        <select>
+          <option value="">Select</option>
+          <option>Institutional Investor</option>
+          <option>Family Office</option>
+          <option>UHNW Individual</option>
+          <option>Brand / Operator</option>
+          <option>Developer / Landowner</option>
+          <option>Development Finance Institution</option>
+          <option>Media / Press</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="btn-sub" type="submit">Submit Inquiry</button>
+    </form>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <svg width="96" height="27" color="rgba(255,255,255,0.55)" style="display:block;"><use href="#logo-h"/></svg>
+      <p class="ft-tagline">Sustainable Advancement through Local Ventures &amp; Assets. Advisory &amp; Asset Management for Regenerative Tourism, Mixed Use Residential Communities &amp; Resilient Infrastructure.</p>
+    </div>
+    <div class="ft-cols">
+      <div>
+        <div class="ft-col-title">Company</div>
+        <ul class="ft-links">
+          <li><a href="#hero">Who We Are</a></li>
+          <li><a href="#what-we-do">What We Do</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Offices</div>
+        <ul class="ft-links">
+          <li><a href="#">Miami, FL (HQ)</a></li>
+          <li><a href="#">Lausanne, Switzerland (Opening 2026)</a></li>
+          <li><a href="mailto:Investors@Salva.com">Investors@Salva.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-disc">
+    <p><strong>Important Disclosures.</strong> Neutra, LLC ("SALVA") is a Delaware limited liability company with its principal place of business in Miami, Florida. SALVA is not a registered broker-dealer with the Financial Industry Regulatory Authority (FINRA) or the U.S. Securities and Exchange Commission (SEC), nor is it a registered investment adviser under the Investment Advisers Act of 1940 or any applicable state securities law. SALVA operates solely as an advisory and asset management firm and does not engage in broker-dealer activities.</p>
+    <p>The information contained on this website does not constitute an offer to sell, a solicitation of an offer to buy, or a recommendation to purchase any security or investment product in any jurisdiction. No information herein shall be construed as investment, legal, tax, or financial advice. Prospective investors must conduct their own independent due diligence and consult with their own qualified legal counsel, tax advisers, and financial advisers before making any investment decision.</p>
+    <p><strong>Forward-Looking Statements and Projections.</strong> Certain information contained herein constitutes forward-looking statements, which can be identified by terms such as "target," "expect," "anticipate," "intend," "plan," "believe," or similar expressions. These statements are based on current expectations and assumptions and involve known and unknown risks, uncertainties, and other factors that may cause actual results to differ materially. SALVA undertakes no obligation to update any forward-looking statement. Past performance is not indicative of future results. Projected returns and targets are hypothetical, for illustrative purposes only, and are not a guarantee of future performance.</p>
+    <p>&#169; 2026 Neutra, LLC dba SALVA. All rights reserved. For accredited and sophisticated investors only. Not directed at retail investors. This communication is confidential and may not be reproduced or redistributed without prior written consent.</p>
+  </div>
+
+  <div class="ft-bottom">
+    <div class="ft-copy">&#169; 2026 Neutra, LLC dba SALVA. All rights reserved.</div>
+    <div class="ft-legal">
+      <a onclick="openModal('privacy')" role="button" tabindex="0">Privacy Policy</a>
+      <a onclick="openModal('terms')" role="button" tabindex="0">Terms of Use</a>
+      <a onclick="openModal('disclosures')" role="button" tabindex="0">Investment Disclosures</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- MODAL: PRIVACY POLICY -->
+<div class="modal-overlay" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal('privacy')" aria-label="Close">&times;</button>
+    <span class="modal-eyebrow">Legal</span>
+    <h2 class="modal-title" id="privacy-title">Privacy Policy</h2>
+    <span class="modal-date">Effective Date: January 1, 2026 &nbsp;|&nbsp; Last Updated: March 1, 2026</span>
+    <div class="modal-rule"></div>
+    <div class="modal-body">
+
+      <h2>1. Introduction</h2>
+      <p>Neutra, LLC, a Delaware limited liability company doing business as SALVA ("SALVA," "we," "us," or "our"), is committed to protecting the privacy and security of personal information. This Privacy Policy describes how we collect, use, disclose, and safeguard information obtained through our website at www.salva.com (the "Site") and through our investor relations and advisory activities.</p>
+      <p>By accessing or using the Site, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy. If you do not agree, please discontinue use of the Site.</p>
+
+      <h2>2. Information We Collect</h2>
+      <p><strong>Information You Provide Directly.</strong> We may collect the following categories of personal information when you submit an inquiry, contact us, or otherwise interact with us:</p>
+      <ul>
+        <li>Full name, title, and professional affiliation</li>
+        <li>Email address and telephone number</li>
+        <li>Mailing address and place of business</li>
+        <li>Investor type and financial profile information (for accreditation and suitability purposes)</li>
+        <li>Any other information you voluntarily provide in correspondence with us</li>
+      </ul>
+      <p><strong>Information Collected Automatically.</strong> When you visit the Site, we may automatically collect certain technical information, including IP address, browser type and version, operating system, referring URLs, pages visited, and session duration. This information is used for security, analytics, and improving the Site.</p>
+      <p><strong>Cookies and Similar Technologies.</strong> The Site may use cookies, web beacons, and similar tracking technologies to enhance user experience and gather aggregate usage data. You may configure your browser to refuse cookies; however, doing so may limit certain Site functionality. We do not use cookies for targeted advertising purposes.</p>
+
+      <h2>3. How We Use Your Information</h2>
+      <p>We use personal information collected for the following purposes:</p>
+      <ul>
+        <li>To respond to inquiries and communicate with prospective investors, partners, and advisers</li>
+        <li>To assess investor suitability and accredited investor status as required by applicable securities laws</li>
+        <li>To fulfill legal and regulatory compliance obligations, including anti-money laundering (AML) and know-your-customer (KYC) requirements</li>
+        <li>To maintain records as required under applicable Delaware and Florida law</li>
+        <li>To send communications regarding SALVA activities, subject to applicable opt-out rights</li>
+        <li>To improve the Site and our services</li>
+        <li>To protect against fraud, unauthorized access, and other legal risks</li>
+      </ul>
+
+      <h2>4. Legal Basis for Processing</h2>
+      <p>Where applicable under the EU General Data Protection Regulation (GDPR) or similar legislation, we process personal data on the following legal bases: (a) performance of or steps taken prior to a contract; (b) compliance with legal obligations; (c) legitimate interests pursued by SALVA; or (d) your consent, where required. You may withdraw consent at any time by contacting us as set out in Section 11.</p>
+
+      <h2>5. Disclosure of Information</h2>
+      <p>SALVA does not sell, rent, or trade personal information to third parties for marketing purposes. We may disclose personal information to:</p>
+      <ul>
+        <li>Service providers engaged to assist with IT, communications, legal, compliance, and financial services, subject to appropriate confidentiality obligations</li>
+        <li>Legal and regulatory authorities as required by applicable law, court order, or governmental authority in Delaware, Florida, or any other applicable jurisdiction</li>
+        <li>Professional advisers including attorneys, accountants, and auditors, under duties of confidentiality</li>
+        <li>Successor entities in connection with a merger, acquisition, reorganization, or sale of assets</li>
+      </ul>
+
+      <h2>6. Data Retention</h2>
+      <p>We retain personal information for as long as necessary to fulfill the purposes set out in this Policy, including to satisfy legal, accounting, and reporting obligations. In general, investor-related records are retained for a minimum of seven (7) years in accordance with applicable securities regulations. Other personal data is retained for no longer than reasonably necessary and is then securely deleted or anonymized.</p>
+
+      <h2>7. Security</h2>
+      <p>We implement commercially reasonable administrative, technical, and physical security measures designed to protect personal information against unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the Internet or electronic storage system is completely secure. We cannot guarantee absolute security and assume no liability for unauthorized access beyond our reasonable control.</p>
+
+      <h2>8. California Privacy Rights (CCPA)</h2>
+      <p>If you are a California resident, you may have certain rights under the California Consumer Privacy Act of 2018, as amended by the California Privacy Rights Act (CPRA), including the right to: (a) know what personal information is collected about you; (b) request deletion of your personal information, subject to certain exceptions; (c) opt out of the sale of your personal information (SALVA does not sell personal information); and (d) non-discrimination for exercising your rights. To exercise these rights, contact us at the details in Section 11.</p>
+
+      <h2>9. Florida Residents</h2>
+      <p>Florida residents may have rights under the Florida Digital Bill of Rights (FDBR) and other applicable Florida statutes. Please contact us to discuss how we process your personal information and to exercise any applicable rights.</p>
+
+      <h2>10. International Visitors</h2>
+      <p>The Site is operated from the United States. If you access the Site from outside the United States, please be aware that your information may be transferred to, processed, and stored in the United States, which may have different data protection laws than your country of residence. By using the Site, you consent to this transfer.</p>
+
+      <h2>11. Contact Us</h2>
+      <p>Questions, concerns, or requests regarding this Privacy Policy or your personal information should be directed to:</p>
+      <div class="modal-contact">
+        <p><strong>Neutra, LLC dba SALVA</strong><br>Attn: Privacy Officer<br>Miami, Florida, United States<br>Email: <a href="mailto:info@salva.com">info@salva.com</a></p>
+      </div>
+
+      <h2>12. Changes to This Policy</h2>
+      <p>We reserve the right to amend this Privacy Policy at any time. Any changes will be posted on this page with an updated effective date. Continued use of the Site following such changes constitutes your acceptance of the revised Policy. We encourage you to review this Policy periodically.</p>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL: TERMS OF USE -->
+<div class="modal-overlay" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal('terms')" aria-label="Close">&times;</button>
+    <span class="modal-eyebrow">Legal</span>
+    <h2 class="modal-title" id="terms-title">Terms of Use</h2>
+    <span class="modal-date">Effective Date: January 1, 2026 &nbsp;|&nbsp; Last Updated: March 1, 2026</span>
+    <div class="modal-rule"></div>
+    <div class="modal-body">
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>These Terms of Use ("Terms") govern your access to and use of the website located at www.salva.com (the "Site"), operated by Neutra, LLC, a Delaware limited liability company doing business as SALVA ("SALVA," "we," "us," or "our"). By accessing or using the Site, you represent that you have read, understood, and agree to be bound by these Terms. If you do not agree, you must immediately cease using the Site.</p>
+      <p>These Terms are governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws principles.</p>
+
+      <h2>2. Nature of Information Provided</h2>
+      <p>All content on the Site, including text, graphics, images, data, and other materials (collectively, "Content"), is provided for general informational purposes only. The Content does not constitute, and should not be construed as, investment advice, financial advice, legal advice, tax advice, or any other professional advice. SALVA makes no representations or warranties of any kind, express or implied, regarding the accuracy, completeness, reliability, suitability, or availability of any Content on the Site.</p>
+      <p>Nothing on the Site constitutes an offer to sell, a solicitation of an offer to buy, or a recommendation regarding any security, investment product, or financial instrument. Any such offer or solicitation will be made only pursuant to formal offering documentation delivered to qualified recipients in accordance with applicable securities laws.</p>
+
+      <h2>3. Not a Broker-Dealer or Registered Investment Adviser</h2>
+      <p>SALVA is not registered as a broker-dealer with the Financial Industry Regulatory Authority (FINRA) or the U.S. Securities and Exchange Commission (SEC). SALVA does not engage in broker-dealer activities, including the solicitation, purchase, or sale of securities on behalf of others in exchange for compensation. No representation is made that SALVA or any of its principals or affiliates are registered or licensed as broker-dealers in any jurisdiction.</p>
+      <p>SALVA is not registered as an investment adviser under the Investment Advisers Act of 1940, as amended, or under the securities laws of Florida or any other state. Any advisory services provided by SALVA are subject to applicable exemptions and exclusions. Prospective clients and investors should seek independent, qualified legal and financial advice regarding the nature and scope of SALVA's services.</p>
+
+      <h2>4. Eligible Users</h2>
+      <p>The Site and its Content are intended solely for use by sophisticated persons, including institutional investors, accredited investors (as defined under Rule 501 of Regulation D promulgated by the SEC), qualified purchasers, family offices, and other professional market participants. The Site is not directed at retail investors or the general public. By accessing the Site, you represent that you are a sophisticated person and that you have sufficient knowledge and experience to evaluate the risks and merits of any investment described herein.</p>
+
+      <h2>5. Intellectual Property</h2>
+      <p>All Content on the Site, including but not limited to the SALVA name, logo, trademarks, service marks, and proprietary information, is the exclusive property of Neutra, LLC or its licensors and is protected by applicable United States and international intellectual property laws. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any Content without the prior written consent of SALVA, except as permitted by these Terms.</p>
+      <p>You are granted a limited, non-exclusive, non-transferable, revocable license to access and use the Site solely for your personal, non-commercial informational purposes. This license does not include any right to data-mine, scrape, aggregate, or commercially exploit the Content.</p>
+
+      <h2>6. Prohibited Conduct</h2>
+      <p>You agree not to use the Site to:</p>
+      <ul>
+        <li>Violate any applicable law, regulation, or third-party rights</li>
+        <li>Engage in unauthorized data collection, scraping, or extraction</li>
+        <li>Introduce malware, viruses, or other harmful code</li>
+        <li>Attempt to gain unauthorized access to any part of the Site or its related systems</li>
+        <li>Impersonate SALVA, its personnel, or any other person or entity</li>
+        <li>Use the Site in any manner that could damage, disable, overburden, or impair its functionality</li>
+      </ul>
+
+      <h2>7. Third-Party Links</h2>
+      <p>The Site may contain links to third-party websites, including the CAF Americas donor-advised fund portal and other external resources. These links are provided solely for your convenience. SALVA has no control over the content, privacy practices, or accuracy of third-party sites and expressly disclaims all responsibility for them. Access to any linked site is at your own risk.</p>
+
+      <h2>8. Disclaimer of Warranties</h2>
+      <p>THE SITE AND ALL CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, OR THAT USE OF THE SITE WILL BE UNINTERRUPTED OR ERROR-FREE. SALVA EXPRESSLY DISCLAIMS ALL SUCH WARRANTIES TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW.</p>
+
+      <h2>9. Limitation of Liability</h2>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SALVA, ITS MEMBERS, MANAGERS, OFFICERS, EMPLOYEES, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH YOUR ACCESS TO OR USE OF, OR INABILITY TO ACCESS OR USE, THE SITE OR ANY CONTENT THEREON, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+      <p>IN NO EVENT SHALL SALVA'S TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATED TO YOUR USE OF THE SITE EXCEED ONE HUNDRED U.S. DOLLARS ($100.00).</p>
+
+      <h2>10. Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless SALVA, its members, managers, officers, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with: (a) your use of the Site; (b) your violation of these Terms; or (c) your violation of any applicable law or the rights of any third party.</p>
+
+      <h2>11. Governing Law and Dispute Resolution</h2>
+      <p>These Terms and any disputes arising out of or relating to them or the Site shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of laws provisions. You agree to submit to the exclusive jurisdiction of the state and federal courts located in the State of Delaware for resolution of any legal matter arising from these Terms, and you waive any objection to the laying of venue in such courts.</p>
+
+      <h2>12. Modifications</h2>
+      <p>SALVA reserves the right to amend these Terms at any time by posting revised Terms on the Site. Amendments are effective upon posting. Your continued use of the Site following the posting of revised Terms constitutes your acceptance of such changes. It is your responsibility to review these Terms periodically.</p>
+
+      <h2>13. Severability and Entire Agreement</h2>
+      <p>If any provision of these Terms is found to be unlawful, void, or unenforceable, that provision shall be deemed severable from these Terms and shall not affect the validity and enforceability of any remaining provisions. These Terms, together with our Privacy Policy and any applicable Investment Disclosures, constitute the entire agreement between you and SALVA regarding your use of the Site.</p>
+
+      <h2>14. Contact</h2>
+      <div class="modal-contact">
+        <p><strong>Neutra, LLC dba SALVA</strong><br>Miami, Florida, United States<br>Email: <a href="mailto:info@salva.com">info@salva.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL: INVESTMENT DISCLOSURES -->
+<div class="modal-overlay" id="modal-disclosures" role="dialog" aria-modal="true" aria-labelledby="disclosures-title">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeModal('disclosures')" aria-label="Close">&times;</button>
+    <span class="modal-eyebrow">Legal</span>
+    <h2 class="modal-title" id="disclosures-title">Investment Disclosures</h2>
+    <span class="modal-date">Effective Date: January 1, 2026 &nbsp;|&nbsp; Last Updated: March 1, 2026</span>
+    <div class="modal-rule"></div>
+    <div class="modal-body">
+
+      <h2>1. No Offer or Solicitation</h2>
+      <p>Nothing contained on this website or in any communication from Neutra, LLC dba SALVA ("SALVA") constitutes an offer to sell, a solicitation of an offer to purchase, or a recommendation to acquire any security, investment fund interest, or other financial instrument in any jurisdiction. Any offering of securities or fund interests will be made solely pursuant to definitive offering documents (such as a private placement memorandum, limited partnership agreement, or subscription agreement) delivered directly to eligible investors, and only in jurisdictions where such an offer is permitted under applicable law.</p>
+
+      <h2>2. Regulatory Status</h2>
+      <p><strong>Not a Broker-Dealer.</strong> Neutra, LLC is not registered or licensed as a broker-dealer with FINRA, the SEC, or any state securities regulator, including the Florida Office of Financial Regulation (OFR) or the Florida Division of Securities under Chapter 517, Florida Statutes. No person or entity affiliated with SALVA is acting in the capacity of a broker-dealer in connection with any information provided on this website.</p>
+      <p><strong>Not a Registered Investment Adviser.</strong> Neutra, LLC is not registered as an investment adviser under the Investment Advisers Act of 1940, as amended, or under the laws of the State of Florida, the State of Delaware, or any other state. Any advisory, consulting, or asset management services provided by SALVA are rendered in reliance upon applicable exemptions from registration and are provided only to qualifying sophisticated investors. Prospective clients should consult independent legal counsel to evaluate the regulatory status of any advisory relationship with SALVA.</p>
+      <p><strong>Delaware and Florida Law.</strong> Neutra, LLC is organized under the laws of the State of Delaware. Its principal operations are conducted in Miami, Florida. SALVA complies with applicable Delaware corporate law and Florida business and securities regulations to the extent required by the nature of its activities.</p>
+
+      <h2>3. Eligible Investors</h2>
+      <p>Any investment opportunity described or referenced by SALVA is available only to persons who qualify as one or more of the following:</p>
+      <ul>
+        <li>Accredited investors as defined in Rule 501(a) of Regulation D under the Securities Act of 1933, as amended</li>
+        <li>Qualified purchasers as defined in Section 2(a)(51) of the Investment Company Act of 1940, as amended</li>
+        <li>Qualified eligible persons as defined in CFTC Regulation 4.7, where applicable</li>
+        <li>Institutional investors or professional clients under applicable non-U.S. securities laws</li>
+      </ul>
+      <p>By accessing investment-related materials from SALVA, you represent and warrant that you meet at least one of the eligibility criteria above and that you have sufficient knowledge and experience in financial and business matters to evaluate the merits and risks of a prospective investment.</p>
+
+      <h2>4. Risk Factors</h2>
+      <p>Investments in private real estate, alternative assets, and related vehicles involve significant risks, including but not limited to:</p>
+      <ul>
+        <li><strong>Illiquidity.</strong> Interests in private investment vehicles are typically illiquid. There is no established secondary market for such interests, and investors should be prepared to hold their investment for the full intended term.</li>
+        <li><strong>Loss of Capital.</strong> There is no guarantee of return of capital. Investors may lose some or all of their invested capital. Alternative investments are speculative in nature.</li>
+        <li><strong>Leverage Risk.</strong> Investment strategies may employ leverage, which can magnify both gains and losses.</li>
+        <li><strong>Concentration Risk.</strong> Portfolios may be concentrated in specific geographies, asset types, or market segments, increasing exposure to sector-specific downturns.</li>
+        <li><strong>Regulatory and Political Risk.</strong> Investments in international markets are subject to foreign regulatory regimes, political instability, currency fluctuation, and expropriation risk.</li>
+        <li><strong>Development and Construction Risk.</strong> Real estate development projects are subject to cost overruns, construction delays, permitting issues, and changes in market conditions.</li>
+        <li><strong>Environmental and Climate Risk.</strong> Investments in nature-based and eco-tourism assets are subject to physical climate risks, regulatory changes related to environmental standards, and ecological factors beyond SALVA's control.</li>
+        <li><strong>Manager and Key Person Risk.</strong> The performance of SALVA-advised vehicles depends substantially on the judgment and continued involvement of key personnel. The loss of key individuals could adversely affect investment performance.</li>
+        <li><strong>Valuation Risk.</strong> The valuation of illiquid assets is inherently subjective. Reported valuations may not reflect amounts realizable upon liquidation.</li>
+      </ul>
+      <p>This list of risk factors is not exhaustive. Investors are encouraged to review all relevant offering materials and consult independent legal, tax, and financial advisers before making any investment decision.</p>
+
+      <h2>5. Forward-Looking Statements and Projections</h2>
+      <p>This website and related materials may contain forward-looking statements, including statements regarding projected returns, target fund sizes, anticipated timelines, and strategic objectives. Forward-looking statements are identifiable by words such as "target," "expect," "project," "anticipate," "intend," "plan," "believe," "estimate," or similar expressions.</p>
+      <p>These statements are based on current assumptions, expectations, and information available to SALVA as of the date of publication and are subject to numerous risks, uncertainties, and contingencies, many of which are beyond SALVA's control. Actual results, performance, and outcomes may differ materially from those expressed or implied. SALVA undertakes no obligation to update or revise any forward-looking statement, whether as a result of new information, future events, or otherwise.</p>
+      <p><strong>Projections are hypothetical and illustrative only.</strong> No assurance is given that any projected or targeted returns will be achieved. Past performance of any SALVA-managed or SALVA-advised vehicle is not indicative of future results.</p>
+
+      <h2>6. Confidentiality</h2>
+      <p>All information provided by SALVA to prospective investors, partners, and advisers is confidential and proprietary to Neutra, LLC. Recipients of such information agree to hold it in strict confidence and not to disclose it to any third party without SALVA's prior written consent, except as required by law. Unauthorized reproduction, distribution, or disclosure of SALVA materials is strictly prohibited.</p>
+
+      <h2>7. Tax Considerations</h2>
+      <p>SALVA does not provide tax advice. The tax treatment of any investment will depend on each investor's particular circumstances, applicable federal, state, and local tax laws, and the laws of any relevant non-U.S. jurisdiction. Investors are strongly encouraged to consult with qualified tax counsel before making any investment decision.</p>
+
+      <h2>8. Anti-Money Laundering</h2>
+      <p>SALVA is committed to compliance with applicable anti-money laundering (AML), counter-terrorism financing (CTF), and know-your-customer (KYC) requirements, including those under the Bank Secrecy Act and applicable state law. All prospective investors will be required to provide such information and documentation as SALVA may reasonably require to satisfy its AML and KYC obligations prior to the acceptance of any subscription.</p>
+
+      <h2>9. No Assurance of Investment Opportunity</h2>
+      <p>The submission of an inquiry or expression of interest through the Site does not create any obligation on the part of SALVA to make available any investment opportunity, provide further information, or enter into any agreement with any prospective investor. SALVA reserves the right to decline, at its sole discretion, any investor or proposed investment relationship for any reason.</p>
+
+      <h2>10. Contact for Investment Inquiries</h2>
+      <div class="modal-contact">
+        <p><strong>Neutra, LLC dba SALVA</strong><br>Investor Relations<br>Miami, Florida, United States<br>Email: <a href="mailto:Investors@Salva.com">Investors@Salva.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function openModal(id) {
+    var overlay = document.getElementById('modal-' + id);
+    if (overlay) {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeModal(id) {
+    var overlay = document.getElementById('modal-' + id);
+    if (overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+  // Close on overlay click outside panel
+  document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(function(overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
